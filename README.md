@@ -2,7 +2,7 @@
 
 Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) usando IaC Terraform.
 
-#### Disclaimer: Utilizar somente para fins de estudo e testes da tecnologia
+#### Disclaimer: Utilizar somente para fins de estudo e testes da tecnologia.
 
 ### Pré-requisitos:
 
