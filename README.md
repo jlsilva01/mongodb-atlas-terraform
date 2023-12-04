@@ -1,4 +1,4 @@
-# Criando MongoDB Atlas no Azure gratuito
+# Criando MongoDB Atlas gratuito na Azure
 
 Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) usando IaC Terraform.
 
@@ -9,8 +9,6 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Terraform]([code.visualstudio.com/download](https://www.terraform.io/downloads))
 - Conta na [MongoDB Cloud](https://cloud.mongodb.com/)
-- Conta _@outlook.com_ específica para esta atividade
-
 
 ### Roteiro:
 
