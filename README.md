@@ -7,7 +7,7 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 ### Pré-requisitos:
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
-- [Terraform]([code.visualstudio.com/download](https://www.terraform.io/downloads))
+- [Terraform](https://www.terraform.io/downloads)
 - Conta na [MongoDB Cloud](https://cloud.mongodb.com/)
 
 ### Roteiro:
