@@ -13,11 +13,14 @@ resource "mongodbatlas_cluster" "cluster" {
   provider_region_name        = var.region
 }
 
-resource "mongodbatlas_project_ip_access_list" "test" {
+data "ipify_ip" "public" {}
+
+resource "mongodbatlas_project_ip_access_list" "ip" {
   project_id = mongodbatlas_project.project.id
-  cidr_block = "0.0.0.0/0"
-  comment    = "cidr block for tf acc testing - allow all"
+  cidr_block = data.ipify_ip.public.ip_cidr
+  comment    = "Regra para acesso através do IP Público"
 }
+
 resource "mongodbatlas_database_user" "user" {
   username           = var.username
   password           = var.password
@@ -28,21 +31,4 @@ resource "mongodbatlas_database_user" "user" {
     role_name     = "readWriteAnyDatabase"
     database_name = "admin"
   }
-}
-
-# output values
-output "project_id" {
-  value = mongodbatlas_project.project.id
-}
-
-output "mongodb_version" {
-  value = mongodbatlas_cluster.cluster.mongo_db_version
-}
-
-output "connection_strings" {
-  value = mongodbatlas_cluster.cluster.connection_strings
-}
-
-output "state_name" {
-  value = mongodbatlas_cluster.cluster.state_name
 }
