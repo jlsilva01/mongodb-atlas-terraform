@@ -8,6 +8,6 @@ terraform {
 }
 
 provider "mongodbatlas" {
-  public_key  = "lhvkvrmf"
-  private_key = "0ae887c3-38c6-40dc-a30c-afd9047f7313"
+  public_key  = "inserir chave publica"
+  private_key = "inserir chave privada"
 }
