@@ -1,6 +1,7 @@
 variable "org_id" {
   type        = string
   description = "MongoDB Atlas Organization ID"
+  default     = "6344...ba96"
 }
 
 variable "project_name" {

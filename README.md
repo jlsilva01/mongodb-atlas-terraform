@@ -42,3 +42,4 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 - [MongoDB Atlas Provider - Terraform Registry](https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs)
 - [Documentação Oficial do Terraform](https://developer.hashicorp.com/terraform/docs)
 - [Documentação do MongoDB Atlas](https://www.mongodb.com/docs/atlas/)
+- [Criar um Atlas Cluster a partir de um modelo usando Terraform](https://www.mongodb.com/pt-br/docs/mongodb-vscode/create-cluster-terraform/)
