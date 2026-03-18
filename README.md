@@ -19,16 +19,21 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
    username = "seu_usuario_admin"
    password = "sua_senha_segura"
    ```
-3. Exportar as chaves da API do MongoDB Atlas como variáveis de ambiente para o Terraform ler de forma segura:
+3. As credenciais do MongoDB Atlas devem ser carregadas de forma segura. Crie um arquivo chamado `.env` (baseado no `.env.example`) com o seguinte conteúdo:
+   ```env
+   MONGODB_ATLAS_PUBLIC_KEY="sua_public_key"
+   MONGODB_ATLAS_PRIVATE_KEY="sua_private_key"
+   ```
+   Em seguida, carregue essas variáveis no seu terminal antes de executar o Terraform:
    - **Linux/macOS**:
      ```bash
-     export MONGODB_ATLAS_PUBLIC_KEY="sua_public_key"
-     export MONGODB_ATLAS_PRIVATE_KEY="sua_private_key"
+     export $(grep -v '^#' .env | xargs)
      ```
    - **Windows (PowerShell)**:
      ```powershell
-     $env:MONGODB_ATLAS_PUBLIC_KEY="sua_public_key"
-     $env:MONGODB_ATLAS_PRIVATE_KEY="sua_private_key"
+     Get-Content .env | Where-Object { $_ -match '^([^#=]+)=(.*)$' } | ForEach-Object {
+         [Environment]::SetEnvironmentVariable($Matches[1].Trim(), $Matches[2].Trim(' "\'''), 'Process')
+     }
      ```
 4. Executar os comandos do Terraform em ordem:
    `terraform init`
