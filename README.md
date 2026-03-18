@@ -16,3 +16,5 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 2. Atualizar o arquivo `variables.tf` com os dados da sua ORG ID, project, cluster name e demais informações que serão utilizados para criar o seu ambiente.
 4. Executar o código Terraform (init | validate | fmt | plan | apply).
 5. Logar na na [MongoDB Cloud](https://cloud.mongodb.com/) e conferir o deploy do seu cluster.
+
+Fonte: [Criar um Atlas Cluster a partir de um modelo usando Terraform](https://www.mongodb.com/pt-br/docs/mongodb-vscode/create-cluster-terraform/)
