@@ -12,6 +12,6 @@ terraform {
 }
 
 provider "mongodbatlas" {
-  public_key  = "ozanvqsp"
-  private_key = "d2133c5c-5f36-4a53-b794-7d60df1c2a99"
+  # Chaves de acesso devem ser passadas através das variáveis de ambiente:
+  # MONGODB_ATLAS_PUBLIC_KEY e MONGODB_ATLAS_PRIVATE_KEY
 }

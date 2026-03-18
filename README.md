@@ -12,7 +12,33 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 
 ### Roteiro:
 
-1. Criar uma API Key com permissão de `Organization Project Creator` e atualizar as informações no arquivo `provider.tf`.
-2. Atualizar o arquivo `variables.tf` com os dados da sua ORG ID, project, cluster name e demais informações que serão utilizados para criar o seu ambiente.
-4. Executar o código Terraform (init | validate | fmt | plan | apply).
-5. Logar na na [MongoDB Cloud](https://cloud.mongodb.com/) e conferir o deploy do seu cluster.
+1. Criar uma API Key com permissão de `Organization Project Creator`.
+2. Criar um arquivo chamado `terraform.tfvars` na raiz do projeto (ou copiar de `terraform.tfvars.example`) definindo suas variáveis sensíveis:
+   ```hcl
+   org_id   = "sua_org_id_aqui"
+   username = "seu_usuario_admin"
+   password = "sua_senha_segura"
+   ```
+3. Exportar as chaves da API do MongoDB Atlas como variáveis de ambiente para o Terraform ler de forma segura:
+   - **Linux/macOS**:
+     ```bash
+     export MONGODB_ATLAS_PUBLIC_KEY="sua_public_key"
+     export MONGODB_ATLAS_PRIVATE_KEY="sua_private_key"
+     ```
+   - **Windows (PowerShell)**:
+     ```powershell
+     $env:MONGODB_ATLAS_PUBLIC_KEY="sua_public_key"
+     $env:MONGODB_ATLAS_PRIVATE_KEY="sua_private_key"
+     ```
+4. Executar os comandos do Terraform em ordem:
+   `terraform init`
+   `terraform validate`
+   `terraform plan`
+   `terraform apply`
+5. Logar na [MongoDB Cloud](https://cloud.mongodb.com/) e conferir o deploy do seu cluster.
+
+## Referências
+
+- [MongoDB Atlas Provider - Terraform Registry](https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs)
+- [Documentação Oficial do Terraform](https://developer.hashicorp.com/terraform/docs)
+- [Documentação do MongoDB Atlas](https://www.mongodb.com/docs/atlas/)

@@ -1,23 +1,34 @@
 variable "org_id" {
-  default = "6344723b01ea830c7242ba96"
+  type        = string
+  description = "MongoDB Atlas Organization ID"
 }
 
 variable "project_name" {
-  default = "eng_dados_satc"
+  type        = string
+  description = "The name of the MongoDB Atlas project"
+  default     = "eng_dados_satc"
 }
 
 variable "region" {
-  default = "US_EAST_2"
+  type        = string
+  description = "The AWS/Azure region where the cluster will be deployed"
+  default     = "US_EAST_2"
 }
 
 variable "cluster_name" {
-  default = "atlasdemoengdados"
+  type        = string
+  description = "The name of the MongoDB Atlas cluster"
+  default     = "atlasdemoengdados"
 }
 
 variable "username" {
-  default = "admin"
+  type        = string
+  description = "The username for the database user"
+  sensitive   = true
 }
 
 variable "password" {
-  default = "admin"
+  type        = string
+  description = "The password for the database user"
+  sensitive   = true
 }
