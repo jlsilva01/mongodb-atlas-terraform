@@ -1,5 +1,5 @@
 variable "org_id" {
-  default = "6344723b01ea830c7242ba96"
+  default = "6344...ba96"
 }
 
 variable "project_name" {
