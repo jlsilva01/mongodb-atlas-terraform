@@ -12,7 +12,7 @@ Procedimento para criação de uma instância FREE do MongoDB na Azure (Atlas) u
 
 ### Roteiro:
 
-1. Criar uma API Key com permissão de `Organization Project Creator`.
+1. Criar uma API Key com permissão de `Organization Project Creator`. (Dentro da ORG: Menu Applications -> API Key -> Create API Key)
 2. Criar um arquivo chamado `terraform.tfvars` na raiz do projeto (ou copiar de `terraform.tfvars.example`) definindo suas variáveis sensíveis:
    ```hcl
    org_id   = "sua_org_id_aqui"
